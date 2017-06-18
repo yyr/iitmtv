@@ -4,6 +4,5 @@
 url_base="http://satellite.imd.gov.in/img/"
 url="http://satellite.imd.gov.in/img/3Dasiasec_ir1.jpg"
 
-mkdir -p DATA
-cd DATA
-curl -o current_sat.jpg ${url}
+cd /data/imd/
+curl -o imd_insat3d-`date +%s`.jpg ${url}
