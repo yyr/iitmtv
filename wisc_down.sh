@@ -9,4 +9,6 @@ fn="xxirm5bbm.jpg"
 url="http://tropic.ssec.wisc.edu/real-time/indian/images/${fn}"
 
 cd /data/wisc/
-curl -o wisc_ir-`date +%s`.jpg ${url}
+fn=wisc_xxirm5bbm-`date +%s`.jpg
+curl -o ${fn} ${url}
+ln -sf ${fn} wisc_xxirm5bbm-current.jpg
