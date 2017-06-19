@@ -1,0 +1,11 @@
+#+TITLE: Welcome to IITM Monsoon Portal.
+#+OPTIONS: toc:nil author:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org.css" />
+
+Welcome to Monsoon Portal (IITM).
+
+** Insat 3D Image
+[[../data/imd/imd_3Dasiasec_ir1-current.jpg]]
+
+** Meteosat-8 IR image of Indian Ocean Region.
+[[../data/wisc/wisc_xxirm5bbm-current.jpg]]
