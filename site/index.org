@@ -5,7 +5,7 @@
 Welcome to Monsoon Portal (IITM).
 
 ** Insat 3D Image
-[[../data/imd/imd_3Dasiasec_ir1-current.jpg]]
+[[../data/imd/3Dglobe.gif]]
 
 ** Meteosat-8 IR image of Indian Ocean Region.
-[[../data/wisc/wisc_xxirm5bbm-current.jpg]]
+[[../data/wisc/xxirm5bbm.gif]]
