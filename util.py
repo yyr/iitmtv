@@ -45,6 +45,9 @@ def get_page(local_file):
         return None
 
 def down_page(url_base,local_file):
+    p = None
+    status = None
+
     try:
         p, status = urllib.urlretrieve(url_base, local_file, None)
     except Exception, e:
