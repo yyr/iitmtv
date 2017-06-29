@@ -52,6 +52,8 @@ def down_page(url_base,local_file):
         p, status = urllib.urlretrieve(url_base, local_file, None)
     except Exception, e:
         print(e)
+        time.sleep(120)
+        down_page(url_base, local_file)
     return(status)
 
 def get_image(url, filename):
