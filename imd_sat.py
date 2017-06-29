@@ -3,16 +3,18 @@
 import time
 from util import *
 
+# http://satellite.imd.gov.in/img/3Dglobe_ir1.jpg
+
 url_base="http://satellite.imd.gov.in/img/"
 url="http://satellite.imd.gov.in/img/3Dasiasec_ir1.jpg"
-tmp_file="imd_3Dasiasec_ir1_index.html"
+tmp_file="3Dglobe_ir1_index.html"
 
 old_time = 0
 data_dir = "/data/imd/"
 
 
 def imd_down():
-    remote_imgname = "3Dasiasec_ir1.jpg"
+    remote_imgname = "3Dglobe_ir1.jpg"
 
     base = down_page(url_base, tmp_file)
     page = get_page(tmp_file)
@@ -22,7 +24,7 @@ def imd_down():
         print("new image available")
         globals()['old_time'] = new_time
         t = time.strftime('%Y-%m-%d-%H:%M:%S')
-        file_name="3Dasiasec_%s.jpg" % t
+        file_name="3Dglobe_ir1_%s.jpg" % t
 
         with cd(data_dir):
             get_image(url, file_name)
