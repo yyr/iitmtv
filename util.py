@@ -47,9 +47,8 @@ def get_page(local_file):
 def down_page(url_base,local_file):
     try:
         p, status = urllib.urlretrieve(url_base, local_file, None)
-    except Exception,e:
-        return(status)
-
+    except Exception, e:
+        print(e)
     return(status)
 
 def get_image(url, filename):
