@@ -3,10 +3,8 @@
 import time
 from util import *
 
-# http://satellite.imd.gov.in/img/3Dglobe_ir1.jpg
-
 url_base="http://satellite.imd.gov.in/img/"
-url="http://satellite.imd.gov.in/img/3Dasiasec_ir1.jpg"
+url="http://satellite.imd.gov.in/img/3Dglobe_ir1.jpg"
 tmp_file="3Dglobe_ir1_index.html"
 
 old_time = 0
