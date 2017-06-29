@@ -5,6 +5,17 @@ import re
 import time
 import urllib
 
+from contextlib import contextmanager
+
+@contextmanager
+def cd(newdir):
+    prevdir = os.getcwd()
+    os.chdir(os.path.expanduser(newdir))
+    try:
+        yield
+    finally:
+        os.chdir(prevdir)
+
 def check_new(old_time, new_time):
     if old_time is None:
         return True
@@ -46,6 +57,7 @@ def get_image(url, filename):
     f.write(urllib.urlopen(url).read())
     f.close()
     return
+
 
 if __name__ == '__main__':
     pass
