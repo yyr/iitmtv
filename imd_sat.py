@@ -1,31 +1,35 @@
 #!/usr/bin/env python
 
+import time
+from util import *
+
 url_base="http://satellite.imd.gov.in/img/"
 url="http://satellite.imd.gov.in/img/3Dasiasec_ir1.jpg"
+tmp_file="imd_3Dasiasec_ir1_index.html"
 
 old_time = 0
-import time
-
-def check_new(new_time):
-    if old_time is None:
-        return True
-    elif old_time < new_time:
-        return True
-    else:
-        return False
-
 
 def imd_down():
-    import urllib
-    t = time.strftime('%Y-%m-%d-%H:%M:%S')
-    new_time = time.time()
-    if check_new(new_time):
+    remote_imgname = "3Dasiasec_ir1.jpg"
+
+    base = down_page(url_base, tmp_file)
+    page = get_page(tmp_file)
+    new_time = get_epo_from_dir_page(page,remote_imgname)
+
+    if check_new(old_time, new_time):
+        print("new image available")
+        globals()['old_time'] = new_time
+        t = time.strftime('%Y-%m-%d-%H:%M:%S')
         file_name="3Dasiasec_%s.jpg" % t
-        p, status = urllib.urlretrieve(url_base,"tmp.html",None)
-        # globals()['old_time'] = new_time
-        return(status)
+        get_image(url, file_name)
+
+    else:
+        print("No new image available")
+
+    return
+
 
 if __name__ == '__main__':
     while True:
         imd_down()
-        time.sleep(50)
+        time.sleep(20)
