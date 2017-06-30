@@ -57,9 +57,14 @@ def down_page(url_base,local_file):
     return(status)
 
 def get_image(url, filename):
-    f = open(filename, 'wb')
-    f.write(urllib.urlopen(url).read())
-    f.close()
+    try:
+        f = open(filename, 'wb')
+        f.write(urllib.urlopen(url).read())
+        f.close()
+    except Exception, e:
+        print(e)
+        time.sleep(120)
+        get_image(url, filename)
     return
 
 
