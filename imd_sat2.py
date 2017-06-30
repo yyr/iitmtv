@@ -5,7 +5,10 @@ from util import *
 url_base="http://satellite.imd.gov.in/img/"
 url="http://satellite.imd.gov.in/img/3DRhalfhr_olr.jpg"
 data_dir = "/data/imd/"
+tmp_file="3DRhalfhr_olr_index.html"
 
+old_time = 0
+data_dir = "/data/imd/"
 
 def imd_down():
     remote_imgname = "3DRhalfhr_olr.jpg"
