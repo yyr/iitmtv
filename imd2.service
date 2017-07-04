@@ -1,0 +1,11 @@
+[Unit]
+Description=imd2 download
+After=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=/home/yagnesh/git/iitmtv/imd_sat2.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

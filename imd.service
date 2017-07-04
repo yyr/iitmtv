@@ -1,11 +1,11 @@
 [Unit]
-Description=wisc_down
+Description=imd
 After=NetworkManager.service
 
 [Service]
 Type=simple
-ExecStart=/home/yagnesh/git/iitmtv/wisc_down.py
-Restart=always
+ExecStart=/home/yagnesh/git/iitmtv/imd_sat.py
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
