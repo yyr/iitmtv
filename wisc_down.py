@@ -23,13 +23,12 @@ def wisc_down(url_base, url, tmp_file, data_dir, remote_imgname):
     t = time.strftime('%Y-%m-%d-%H:%M:%S')
     if check_new(old_time, new_time):
         old_time = new_time
-        print("%s: new image available" % t)
         file_name="xxirm5bbm_%s.jpg" % new_time
 
         with cd(data_dir):
             get_image(url, file_name)
             with open(log_file, "ac") as logfile:
-                logfile.write("%s image is downloaded" % time_stamp)
+                logfile.write("{0} image is downloaded at {1} \n".format( time_stamp, t))
 
     else:
         print("%s: No new image is available" % t)
