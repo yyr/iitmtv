@@ -24,7 +24,7 @@ def wisc_down(url_base, url, tmp_file, data_dir, remote_imgname):
     if check_new(old_time, new_time):
         old_time = new_time
         print("%s: new image available" % t)
-        file_name="xxirm5bbm_%s.jpg" % t
+        file_name="xxirm5bbm_%s.jpg" % new_time
 
         with cd(data_dir):
             get_image(url, file_name)
