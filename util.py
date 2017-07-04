@@ -24,8 +24,7 @@ def check_new(old_time, new_time):
     else:
         return False
 
-def get_epo_from_dir_page(html_page,match_string):
-    epo_time = 0
+def get_time_from_dir_page(html_page, match_string):
     line = None
     for item in html_page.split("\n"):
         if match_string in item:
@@ -33,8 +32,12 @@ def get_epo_from_dir_page(html_page,match_string):
     if line:
         t = re.search(">([0-9][0-9].* )<",line)
         tim = t.group(1).strip()
-        pattern = '%d-%b-%Y %H:%M'
-        epo_time = int(time.mktime(time.strptime(tim, pattern)))
+        return tim
+
+def get_epo_from_dir_page(tim):
+    pattern = '%d-%b-%Y %H:%M'
+    epo_time = int(time.mktime(time.strptime(tim, pattern)))
+
     return epo_time
 
 def get_page(local_file):
