@@ -14,9 +14,9 @@ install:
 	[ -d ${SYSTEMD} ] && cp gfs.service ${SYSTEMD}/
 
 uninstall:
-	[ -f ${SYSTEMD}/imd.service ] && rm  ${SYSTEMD}/iitmtv.service
-	[ -f ${SYSTEMD}/imd2.service ] && rm  ${SYSTEMD}/iitmtv.service
-	[ -f ${SYSTEMD}/wisc.service ] && rm  ${SYSTEMD}/iitmtv.service
+	[ -f ${SYSTEMD}/imd.service ] && rm  ${SYSTEMD}/imd.service
+	[ -f ${SYSTEMD}/imd2.service ] && rm  ${SYSTEMD}/imd2.service
+	[ -f ${SYSTEMD}/wisc.service ] && rm  ${SYSTEMD}/wisc.service
 	[ -f ${SYSTEMD}/gfs.service ] && rm  ${SYSTEMD}/gfs.service
 
 start:
@@ -24,6 +24,13 @@ start:
 	systemctl start imd2.service
 	systemctl start wisc.service
 	systemctl start gfs.service
+
+restart:
+	systemctl daemon-reload
+	systemctl restart imd.service
+	systemctl restart imd2.service
+	systemctl restart wisc.service
+	systemctl restart gfs.service
 
 stop:
 	systemctl stop imd.service
