@@ -4,11 +4,10 @@
 # wisc
 wiscdir=/data/wisc/
 cd $wiscdir;
-l16=`ls -1t *.jpg | head -16 | tac`
 
 sleep 2
 echo convert -delay 50 -loop 0 $l16 xxirm5bbm.gif
-convert -delay 50 -loop 0 $l16 xxirm5bbm.gif
+convert -delay 100 -loop 0 *UTC* xxirm5bbm.gif
 
 # imd
 imddir=/data/imd/
