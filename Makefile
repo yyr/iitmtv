@@ -11,20 +11,24 @@ install:
 	[ -d ${SYSTEMD} ] && cp imd.service ${SYSTEMD}/
 	[ -d ${SYSTEMD} ] && cp imd2.service ${SYSTEMD}/
 	[ -d ${SYSTEMD} ] && cp wisc.service ${SYSTEMD}/
+	[ -d ${SYSTEMD} ] && cp gfs.service ${SYSTEMD}/
 
 uninstall:
 	[ -f ${SYSTEMD}/imd.service ] && rm  ${SYSTEMD}/iitmtv.service
 	[ -f ${SYSTEMD}/imd2.service ] && rm  ${SYSTEMD}/iitmtv.service
 	[ -f ${SYSTEMD}/wisc.service ] && rm  ${SYSTEMD}/iitmtv.service
+	[ -f ${SYSTEMD}/gfs.service ] && rm  ${SYSTEMD}/gfs.service
 
 start:
 	systemctl start imd.service
 	systemctl start imd2.service
 	systemctl start wisc.service
+	systemctl start gfs.service
 
 stop:
 	systemctl stop imd.service
 	systemctl stop imd2.service
 	systemctl stop wisc.service
+	systemctl stop gfs.service
 
 .PHONY: all

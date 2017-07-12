@@ -1,0 +1,11 @@
+[Unit]
+Description=gfs_down
+After=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=/home/yagnesh/git/iitmtv/imd_gfs.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

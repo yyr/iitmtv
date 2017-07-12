@@ -42,4 +42,6 @@ def gfs_down(url_base, files, data_dir):
     return
 
 if __name__ == '__main__':
-    gfs_down(url_base, files, data_dir)
+    while True:
+        gfs_down(url_base, files, data_dir)
+        time.sleep(86400)
